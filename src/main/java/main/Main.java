@@ -6,13 +6,6 @@ import java.util.Arrays;
 public class Main{
     public static void main(String[] args){
 
-//        String message = args.length > 0 ? "Your arguments: " : "No arguments";
-//        System.out.println( message );
-//
-//        for( String arg : args ){
-//            System.out.println( arg );
-//        }
-
         if(args.length < 4 ){
             System.out.println("Недостаточно аргументов для выполнения программы.");
             System.exit(0);
@@ -27,5 +20,6 @@ public class Main{
         for(String a : inputFileName){
             System.out.print(a + " ");
         }
+        
     }
 }
