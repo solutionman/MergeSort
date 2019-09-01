@@ -16,10 +16,15 @@ public class Main{
         String outputFileName = args[2];
         ArrayList<String> inputFileName = new ArrayList<>(Arrays.asList(args).subList(3, args.length));
 
-        System.out.print( typeOfSort + " " + typeOfData + " " + outputFileName + " ");
-        for(String a : inputFileName){
-            System.out.print(a + " ");
+//        System.out.print( typeOfSort + " " + typeOfData + " " + outputFileName + " ");
+//        for(String a : inputFileName){
+//            System.out.print(a + " ");
+//        }
+
+        CheckArguments checkArgs = new CheckArguments();
+        if(!checkArgs.checkArguments( typeOfSort, typeOfData, outputFileName, inputFileName )){
+            System.out.println("ошибка в аргументах, работа программы прекращена.");
+            System.exit(0);
         }
-        
     }
 }
