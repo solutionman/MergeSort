@@ -23,8 +23,9 @@ public class Main{
 
         CheckArguments checkArgs = new CheckArguments();
         if(!checkArgs.checkArguments( typeOfSort, typeOfData, outputFileName, inputFileName )){
-            System.out.println("ошибка в аргументах, работа программы прекращена.");
+            System.out.println("Ошибка в аргументах, работа программы прекращена.");
             System.exit(0);
         }
+        
     }
 }
