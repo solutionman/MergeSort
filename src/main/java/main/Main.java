@@ -29,7 +29,8 @@ public class Main{
             System.out.println("Ошибка в аргументах, работа программы прекращена.");
             System.exit(0);
         }
-        int amount = inputFileName.size();
+
+
         try(
             BufferedReader reader1 = new BufferedReader( new FileReader( inputFileName.get( 0 ) ) );
             BufferedReader reader2 = new BufferedReader( new FileReader( inputFileName.get( 1 ) ) )
