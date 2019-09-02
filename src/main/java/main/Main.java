@@ -1,5 +1,8 @@
 package main;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -26,6 +29,14 @@ public class Main{
             System.out.println("Ошибка в аргументах, работа программы прекращена.");
             System.exit(0);
         }
-        
+
+        try( BufferedReader fileBufferReader = new BufferedReader( new FileReader( inputFileName.get( 0 ) ) ) ){
+            String fileLineContent;
+            while( (fileLineContent = fileBufferReader.readLine() ) != null ){
+                System.out.println(fileLineContent);
+            }
+        } catch( IOException e ){
+            System.out.println("Ошибка при чтении файла " + inputFileName.get( 0 ));
+        }
     }
 }
