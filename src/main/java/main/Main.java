@@ -29,11 +29,15 @@ public class Main{
             System.out.println("Ошибка в аргументах, работа программы прекращена.");
             System.exit(0);
         }
-
-        try( BufferedReader fileBufferReader = new BufferedReader( new FileReader( inputFileName.get( 0 ) ) ) ){
-            String fileLineContent;
-            while( (fileLineContent = fileBufferReader.readLine() ) != null ){
-                System.out.println(fileLineContent);
+        int amount = inputFileName.size();
+        try(
+            BufferedReader reader1 = new BufferedReader( new FileReader( inputFileName.get( 0 ) ) );
+            BufferedReader reader2 = new BufferedReader( new FileReader( inputFileName.get( 1 ) ) )
+        ){
+            String line1;
+            String line2;
+            while( (line1 = reader1.readLine() ) != null && (line2 = reader2.readLine() ) != null ){
+                System.out.println(line1 + " " + line2);
             }
         } catch( IOException e ){
             System.out.println("Ошибка при чтении файла " + inputFileName.get( 0 ));
