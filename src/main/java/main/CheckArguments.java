@@ -16,6 +16,12 @@ class CheckArguments {
             return false;
         }
 
+        File out = new File( outputFileName );
+        if( !out.exists() || out.isDirectory() ){
+            System.out.println("Нет файла " + out + " или он не является файлом");
+            return false;
+        }
+
         for( String ifn : inputFilesName ){
             File f = new File(ifn);
             if( !f.exists() || f.isDirectory() ){

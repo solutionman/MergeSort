@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 class MergingSorting{
-     void mergeAndSort(String firstFile, String secondFile){
+    void mergeAndSort(String outputFile, String firstFile, String secondFile){
 
         try(
                 BufferedReader reader1 = new BufferedReader( new FileReader( firstFile ) );

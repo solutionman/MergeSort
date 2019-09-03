@@ -23,7 +23,7 @@ public class Main{
         }
 
         MergingSorting mergingSorting = new MergingSorting();
-        mergingSorting.mergeAndSort( inputFileName.get( 0 ), inputFileName.get( 1 ) );
+        mergingSorting.mergeAndSort( outputFileName, inputFileName.get( 0 ), inputFileName.get( 1 ) );
 
     }
 }
