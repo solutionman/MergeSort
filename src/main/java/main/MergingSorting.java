@@ -33,4 +33,18 @@ class MergingSorting{
         }
 
     }
+    void singleFile( String outputFile, String inputFile ){
+        try(
+                BufferedReader reader = new BufferedReader( new FileReader(inputFile) );
+                BufferedWriter writer = new BufferedWriter( new FileWriter( outputFile ) )
+                ){
+            String line;
+            while( (line = reader.readLine()) != null ){
+                writer.write( line );
+            }
+
+        } catch( IOException e ){
+            System.out.println("Ошибка при обработке файла " + e);
+        }
+    }
 }
