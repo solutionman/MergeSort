@@ -35,7 +35,7 @@ public class Main{
         MergingSorting mergingSorting = new MergingSorting();
 
         if(inputFileName.size() == 1){
-            System.out.println( "Входящий файл один, объединять не с чем, его содержимое будет внесено в исходящий файл." );
+            System.out.println( "Входящий файл один, объединять не с чем, его содержимое будет внесено в исходящий файл " + outputFileName );
             mergingSorting.singleFile( outputFileName, inputFileName.get( 0 ) );
         } else {
 
