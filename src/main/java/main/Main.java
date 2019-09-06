@@ -1,5 +1,7 @@
 package main;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -35,11 +37,28 @@ public class Main{
         MergingSorting mergingSorting = new MergingSorting();
 
         if(inputFileName.size() == 1){
+
             System.out.println( "Входящий файл один, объединять не с чем, его содержимое будет внесено в исходящий файл " + outputFileName );
             mergingSorting.singleFile( outputFileName, inputFileName.get( 0 ) );
+
         } else {
 
-            mergingSorting.mergeAndSort( outputFileName, inputFileName.get( 0 ), inputFileName.get( 1 ) );
+            try{
+                File tempFile = File.createTempFile( "tempFile", null );
+                String tempFileName = inputFileName.get( 0 );
+
+                for( int i = 0; i < inputFileName.size() - 1; i++ )
+                {
+                    mergingSorting.mergeAndSort( outputFileName, tempFileName, inputFileName.get( i + 1 ) );
+                    mergingSorting.singleFile( tempFileName, outputFileName );
+                }
+
+                tempFile.deleteOnExit();
+
+            } catch ( IOException e ){
+                System.out.println("Ошибка при слиянии и сортировке файлов " + e);
+            }
+
         }
 
 
