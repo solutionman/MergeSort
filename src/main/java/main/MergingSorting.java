@@ -22,10 +22,14 @@ class MergingSorting{
                 int second = Integer.parseInt( line2 );
                 if( first > second){
                     writer.write( Integer.toString(second) );
+                    writer.newLine();
                     writer.write( Integer.toString(first) );
+                    writer.newLine();
                 } else {
                     writer.write( Integer.toString(first) );
+                    writer.newLine();
                     writer.write( Integer.toString(second) );
+                    writer.newLine();
                 }
             }
         } catch( IOException e ){
@@ -41,6 +45,7 @@ class MergingSorting{
             String line;
             while( (line = reader.readLine()) != null ){
                 writer.write( line );
+                writer.newLine();
             }
 
         } catch( IOException e ){
