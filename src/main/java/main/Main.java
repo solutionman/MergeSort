@@ -49,7 +49,7 @@ public class Main{
 
                 for( int i = 0; i < inputFileName.size() - 1; i++ )
                 {
-                    mergingSorting.mergeAndSort( outputFileName, tempFileName, inputFileName.get( i + 1 ) );
+                    mergingSorting.mergeAndSort( outputFileName, tempFileName, inputFileName.get( i + 1 ), typeOfData );
                     mergingSorting.singleFile( tempFileName, outputFileName );
                 }
 
