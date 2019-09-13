@@ -45,12 +45,13 @@ public class Main{
 
             try{
                 File tempFile = File.createTempFile( "tempFile", null );
-                String tempFileName = inputFileName.get( 0 );
+                //String tempFileName = inputFileName.get( 0 );
+                mergingSorting.singleFile( "tempFile", inputFileName.get( 0 ) );
 
                 for( int i = 0; i < inputFileName.size() - 1; i++ )
                 {
-                    mergingSorting.mergeAndSort( outputFileName, tempFileName, inputFileName.get( i + 1 ), typeOfData );
-                    mergingSorting.singleFile( tempFileName, outputFileName );
+                    mergingSorting.mergeAndSort( outputFileName, "tempFile", inputFileName.get( i + 1 ), typeOfData );
+                    mergingSorting.singleFile( "tempFile", outputFileName );
                 }
 
                 tempFile.deleteOnExit();
